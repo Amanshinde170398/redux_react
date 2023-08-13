@@ -1,9 +1,14 @@
 import styles from "../styles/todo.module.css";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../redux/actions/todoActions";
 
-const ToDoForm = ({ createTodo }) => {
+const ToDoForm = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (e.target.todo.value) createTodo(e.target.todo.value);
+    const text = e.target.todo.value;
+    if (text) dispatch(addTodo(text));
     e.target.todo.value = "";
     return;
   };
