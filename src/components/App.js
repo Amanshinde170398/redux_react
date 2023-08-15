@@ -1,17 +1,16 @@
-import { useState } from "react";
 import "../styles/App.css";
-import { ToDoForm, TodoList } from "./index";
-import { Provider } from "react-redux";
-import { store } from "../redux/store";
+import { Home, Todo, Note } from "./index";
+
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="appHeading">ToDo App</header>
-      <Provider store={store}>
-        <ToDoForm />
-        <TodoList />
-      </Provider>
+      <Routes>
+        <Route exact path="/" Component={Home} />
+        <Route exact path="/todo" Component={Todo} />
+        <Route exact path="/note" Component={Note} />
+      </Routes>
     </div>
   );
 }
