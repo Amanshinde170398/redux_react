@@ -1,10 +1,11 @@
 import styles from "../styles/todo.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleTodo } from "../redux/actions/todoActions";
+// import { toggleTodo } from "../redux/actions/todoActions";
+import { actions, todoSelector } from "../redux/reducers/todoReducer";
 
 const TodoList = () => {
   const dispatch = useDispatch();
-  const todoList = useSelector((state) => state.todoReducer.todos);
+  const todoList = useSelector(todoSelector);
   return (
     <div className={styles.todoContainer}>
       <ul className={styles.listContainer}>
@@ -19,7 +20,8 @@ const TodoList = () => {
             <span
               className="btn btn-warning"
               onClick={() => {
-                dispatch(toggleTodo(index));
+                // dispatch(toggleTodo(index));
+                dispatch(actions.toggle(index));
               }}
             >
               Toggle

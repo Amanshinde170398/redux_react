@@ -1,6 +1,7 @@
 import styles from "../styles/note.module.css";
-import { addNote } from "../redux/actions/noteActions";
+// import { addNote } from "../redux/actions/noteActions";
 import { useDispatch } from "react-redux";
+import { actions } from "../redux/reducers/noteReducer";
 
 const NoteForm = () => {
   const dispatch = useDispatch();
@@ -8,7 +9,8 @@ const NoteForm = () => {
     e.preventDefault();
     const text = e.target.note.value;
     if (text) {
-      dispatch(addNote(text));
+      // dispatch(addNote(text));
+      dispatch(actions.add(text));
     }
     e.target.note.value = "";
     return;

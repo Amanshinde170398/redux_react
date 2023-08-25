@@ -1,10 +1,11 @@
 import styles from "../styles/note.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteNote } from "../redux/actions/noteActions";
+import { actions, noteSelector } from "../redux/reducers/noteReducer";
 
 const NoteList = () => {
   const dispatch = useDispatch();
-  const notes = useSelector((state) => state.noteReducer.notes);
+  const notes = useSelector(noteSelector);
 
   return (
     <div className={styles.noteListContainer}>
@@ -17,7 +18,8 @@ const NoteList = () => {
               <button
                 className="btn btn-danger"
                 onClick={() => {
-                  dispatch(deleteNote(index));
+                  // dispatch(deleteNote(index));
+                  dispatch(actions.delete(index));
                 }}
               >
                 Delete
