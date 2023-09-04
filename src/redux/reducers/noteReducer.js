@@ -7,11 +7,11 @@ const initialState = {
   notes: [
     {
       text: "Loremasasasas ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      createdOn: new Date().getDate(),
+      createdOn: new Date().toDateString(),
     },
     {
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      createdOn: new Date().getDay(),
+      createdOn: new Date().toDateString(),
     },
   ],
 };
